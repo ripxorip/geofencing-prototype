@@ -1,6 +1,8 @@
-FROM continuumio/miniconda3:latest
+FROM continuumio/miniconda3:4.8.2
 
 LABEL maintainer="SWIM EUROCONTROL <http://www.eurocontrol.int>"
+
+RUN sed -i -re 's/buster/oldoldstable/g' /etc/apt/sources.list
 
 RUN apt-get update -y; apt-get upgrade -y
 
